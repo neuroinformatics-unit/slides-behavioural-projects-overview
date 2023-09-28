@@ -1,14 +1,14 @@
 ---
-title: A template presentation
-subtitle: so much fun
-author: SWC Neuroinformatics Unit
+title: Behavioural Projects Overview
+subtitle: SWC/GCNU Neuroinformatics Unit
+author: Niko Sirmpilatze
 execute: 
   enabled: true
 format:
     revealjs:
         theme: [default, niu-dark.scss]
         logo: img/logo_niu_dark.png
-        footer: "Edit this footer | 2023-07-26"
+        footer: "Discussion with AIND | 2023-09-29"
         slide-number: c
         menu:
             numbers: true
@@ -28,7 +28,7 @@ format:
     html:
         theme: [default, niu-dark.scss]
         logo: img/logo_niu_dark.png
-        date: "2023-07-05"
+        date: "2023-09-29"
         toc: true
         code-overflow: scroll
         highlight-style: atom-one
