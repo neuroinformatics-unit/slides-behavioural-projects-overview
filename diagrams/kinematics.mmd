@@ -1,0 +1,49 @@
+flowchart TB
+    classDef emphasis fill:#03A062;
+
+    tracks[bodypart tracks] --> cleaning
+
+    subgraph cleaning
+    direction TB
+
+    drop["drop bad values"]
+    interp["interpolate"]
+    smooth["smooth"]
+    transform
+    end
+
+    subgraph fit["fit shape"]
+    direction TB
+
+    ellipse
+    bbox["bounding box"]
+    center["center-of-mass"]
+    end
+
+    subgraph scalars
+    direction LR
+
+    size
+    speed
+    angle["joint angle"]
+    end
+
+    subgraph vectors
+    direction LR
+
+    orientation
+    velocity["(angular) velocity"]
+    acceleration["(angular) acceleration"]
+    end
+
+    fit -.-> scalars
+    cleaning ---> scalars & vectors
+    cleaning -.-> fit
+
+    class tracks emphasis
+    class velocity emphasis
+    class acceleration emphasis
+    class orientation emphasis
+    class size emphasis
+    class speed emphasis
+    class angle emphasis

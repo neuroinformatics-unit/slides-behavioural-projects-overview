@@ -1,0 +1,12 @@
+flowchart TB
+    classDef emphasis fill:#03A062;
+
+    video -->|compression/re-encoding | video2["compressed video"]
+    video2 -->|pose estimation + tracking| tracks["pose tracks"]
+    tracks --> |calculations| kinematics
+    tracks -->|classifiers| actions["actions / behav syllables"]
+    video2 --> |comp vision| actions
+
+    linkStyle 1 stroke:#03A062, color:;
+    class video2 emphasis
+    class tracks emphasis

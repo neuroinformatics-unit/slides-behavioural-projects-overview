@@ -1,0 +1,35 @@
+classDiagram
+
+    class Track{
+        name: str
+    }
+
+    class Video{
+        filename: str
+        backend: VideoBackend
+        from_filename()
+    }
+
+    class LabeledFrame{
+        video: Video
+        frame_idx: int
+        instances: List[Instance]
+        numpy()
+    }
+
+    class Labels{
+        labeled_frames: List[LabeledFrame]
+        videos: List[Video]
+        skeletons: List[Skeleton]
+        tracks: List[Track]
+        provenance: Dict
+        numpy()
+        find()
+    }
+
+    Video --> LabeledFrame
+    Instance --o LabeledFrame
+    LabeledFrame --o Labels
+    Video --o Labels
+    Skeleton --o Labels
+    Track --o Labels

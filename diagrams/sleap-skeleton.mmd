@@ -1,0 +1,29 @@
+classDiagram
+
+    class Node{
+        name: str
+    }
+
+    class Edge{
+        source: Node
+        destination: Node
+
+    }
+
+    class Symmetry{
+        nodes: set[Node]
+    }
+
+
+    class Skeleton{
+        nodes: list[Node]
+        edges: list[Edge]
+        symmetries: list[Symmetry]
+        name: str
+    }
+
+    Node --o Edge
+    Node --o Symmetry
+    Node --o Skeleton
+    Edge --o Skeleton
+    Symmetry --o Skeleton
