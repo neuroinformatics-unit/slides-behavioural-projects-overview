@@ -1,0 +1,40 @@
+classDiagram
+
+    class Node{
+        name: str
+    }
+
+    class Skeleton{
+        nodes: list[Node]
+        edges: list[Edge]
+        symmetries: list[Symmetry]
+        name: str
+    }
+
+    class Point{
+        x: float
+        y: float
+        visible: bool
+        complete: bool
+        numpy()
+    }
+
+
+    class Track{
+        name: str
+    }
+
+    class Instance{
+        points: Dict[Node, Point]
+        skeleton: Skeleton
+        track: Track
+        from_numpy()
+        numpy()
+    }
+
+    Track --> Instance
+    Point --> Instance
+    Skeleton --> Instance
+    Node --> Instance
+
+

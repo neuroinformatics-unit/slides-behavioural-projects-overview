@@ -41,6 +41,28 @@ format:
         page-layout: full
 ---
 
+## Tracking animals in videos {.smaller}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![source: [doi.org/10.1038/s41593-020-00734-z](https://doi.org/10.1038/s41593-020-00734-z)](img/tracking_types.png){fig-align=center height=500}
+:::
+
+::: {.column width="50%" .fragment}
+- **Detection**: locate the animal's centroid in a frame, or draw a bbox/ellipse around the animal
+  
+- **Pose estimation**: locate the animal's body parts in a frame
+  
+- **Tracking**: Connect locations/bboxes in consecutive frames
+
+- **Pose tracking**: pose estimation + tracking
+
+_Credit to **Sofia Miñano** for helping me with the terminology_
+:::
+
+::::
+
 ## Contents
 
 Some example slides - [also look at example RevealJS slides in the Quarto docs](https://quarto.org/docs/presentations/revealjs/)

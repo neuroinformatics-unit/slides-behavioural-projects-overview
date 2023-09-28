@@ -1,0 +1,70 @@
+flowchart TB
+    classDef emphasis fill:#03A062;
+    classDef aside fill:#EB7AC9;
+
+    tracks[bodypart tracks] --> cleaning
+    ROIpre([ROI]) -.-> |transform| ROI([ROI])
+    ROI --> ROI_metrics
+
+
+    subgraph cleaning
+    direction TB
+
+    drop["drop bad values"]
+    interp["interpolate"]
+    smooth["smooth"]
+    transform
+    end
+
+    subgraph fit["fit shape"]
+    direction TB
+
+    ellipse
+    bbox["bounding box"]
+    center["center-of-mass"]
+    end
+
+    subgraph ROI_metrics["ROI metrics"]
+    direction LR
+
+    distance[distanco to]
+    time[time spent in]
+    entries[entries/exits]
+    end
+
+    subgraph scalars
+    direction LR
+
+    size
+    speed
+    angle["joint angle"]
+    end
+
+    subgraph vectors
+    direction LR
+
+    orientation
+    velocity["(angular) velocity"]
+    acceleration["(angular) acceleration"]
+    end
+
+    cleaning--> ROI_metrics
+    ROI -.-> fit
+    fit -.-> scalars
+    fit -.-> ROI_metrics
+    cleaning ---> scalars & vectors
+    cleaning -.-> fit
+
+    class ROIpre aside
+    class ROI aside
+    class distance aside
+    class time aside
+    class entries aside
+
+    class tracks emphasis
+    class velocity emphasis
+    class acceleration emphasis
+    class orientation emphasis
+    class size emphasis
+    class speed emphasis
+    class angle emphasis
