@@ -6,8 +6,8 @@ execute:
   enabled: true
 format:
     revealjs:
-        theme: [default, niu-dark.scss]
-        logo: img/logo_niu_dark.png
+        theme: [default, niu-light.scss]
+        logo: img/logo_niu_light.png
         footer: "Discussion with AIND | 2023-09-29"
         slide-number: c
         menu:
@@ -26,8 +26,8 @@ format:
           fontFamily: arial
           curve: linear
     html:
-        theme: [default, niu-dark.scss]
-        logo: img/logo_niu_dark.png
+        theme: [default, niu-light.scss]
+        logo: img/logo_niu_light.png
         date: "2023-09-29"
         toc: true
         code-overflow: scroll
@@ -41,37 +41,218 @@ format:
         page-layout: full
 ---
 
-## Tracking animals in videos {.smaller}
+## Behavioural experiments at SWC
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-![source: [doi.org/10.1038/s41593-020-00734-z](https://doi.org/10.1038/s41593-020-00734-z)](img/tracking_types.png){fig-align=center height=500}
+
+![](img/swc-building.jpg){height=500}
 :::
 
-::: {.column width="50%" .fragment}
-- **Detection**: locate the animal's centroid in a frame, or draw a bbox/ellipse around the animal
-  
-- **Pose estimation**: locate the animal's body parts in a frame
-  
-- **Tracking**: Connect locations/bboxes in consecutive frames
+::: {.column width="50%"}
 
-- **Pose tracking**: pose estimation + tracking
+A diverse range:
 
-_Credit to **Sofia Miñano** for helping me with the terminology_
+- large collaborative projects
+  - Zoo
+  - Crabs
+  - Aeon
+- small-scale lab-specific projects
 :::
 
 ::::
 
-## Contents
+## Aeon
 
-Some example slides - [also look at example RevealJS slides in the Quarto docs](https://quarto.org/docs/presentations/revealjs/)
+:::: {.columns}
 
-* Non-executable and executable code-blocks
-* bullet points with highlighting 
-* two-column slides 
-* how to include a slide from a separate MD file
-* preview and link to a webpage
+::: {.column width="40%"}
+
+![](img/aeon-arena.jpg){height=500}
+:::
+
+::: {.column width="60%"}
+
+- Mice foraging in a large arena
+- 24-hour recordings
+- Multiple cameras
+- Multi-animal tracking (SLEAP)
+- Plans to combine with Neuropixels
+:::
+
+::::
+
+::: aside
+*Image: Chang Huan Lo* | Multiple SWC labs, [NeuroGears](https://neurogears.org/), [DataJoint](https://datajoint.com/), et al.
+:::
+
+## Crabs
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](img/crab-detection.jpg){}
+:::
+
+::: {.column width="50%"}
+- Fiddler crabs
+  - in the wild
+  - in a *naturalistic* lab setting
+- Detection and tracking with custom CNNs
+:::
+
+::::
+
+::: aside
+*Image: Sofia Minano* | 
+[Branco Lab](https://www.sainsburywellcome.org/web/groups/branco-lab), 
+[Margrie Lab](https://www.sainsburywellcome.org/web/groups/margrie-lab),
+[UCL ARC](https://www.ucl.ac.uk/advanced-research-computing)
+:::
+
+## Zoo
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](img/zoo-wasp.png){}
+:::
+
+::: {.column width="50%"}
+- Videos acquired at the London Zoo
+- Multiple species from 🐝 to 🐘
+- Diverse environments
+- Pose estimation and tracking (DeepLabCut)
+:::
+
+::::
+
+::: aside
+*Image: Sanna Titus* |
+[ZSL](https://www.zsl.org/),
+[Branco Lab](https://www.sainsburywellcome.org/web/groups/branco-lab), 
+[Margrie Lab](https://www.sainsburywellcome.org/web/groups/margrie-lab),
+[UCL ARC](https://www.ucl.ac.uk/advanced-research-computing)
+:::
+
+## Lab-specific projects
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](img/EPM-mouse.png){}
+
+:::
+
+::: {.column width="50%"}
+
+![](img/open-field-mouse.png){}
+
+:::
+
+::::
+
+::: aside
+*Images: Loukia Katsouri* |
+[O'Keefe Lab](https://www.sainsburywellcome.org/web/groups/okeefe-lab)
+:::
+
+## Our priority
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Standardised video analysis pipeline, **but**:
+
+- Flexible
+- Modular
+- Extensible
+:::
+
+::: {.column width="50%"}
+```{mermaid}
+%%| file: diagrams/video-pipeline.mmd
+%%| fig-height: 500px
+``` 
+:::
+
+::::
+
+## How to achieve this?
+
+::: {.incremental}
+- Make existing tools easier to use for researchers
+- Develop new tools to fill gaps in the ecosystem
+- Make existing and new tools interoperable
+:::
+
+
+## Working with existing tools {.smaller}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+Pose estimation libraries:
+
+- [DeepLabCut](http://www.mackenziemathislab.org/deeplabcut)
+- [SLEAP](https://sleap.ai/)
+- Many others...
+
+**But**:
+
+- Know-how required
+- GPU-intensive
+:::
+
+::: {.column width="60%"}
+```{mermaid}
+%%| file: diagrams/video-pipeline_emph-pose.mmd
+%%| fig-height: 500px
+``` 
+:::
+
+::::
+
+## Working with existing tools
+
+- Centrally installed modules on HPC cluster
+
+```{.bash}
+module load deeplabcut
+module load SLEAP
+```
+
+::: {.fragment}
+- Curate [detailed how-to guides](https://howto.neuroinformatics.dev/data_analysis/HPC-module-SLEAP.html){preview-link="true" style="text-align: center"}
+:::
+
+::: {.fragment}
+- Deliver courses and workshops on:
+  - Pose estimation with SLEAP
+  - Linux and HPC
+:::
+
+## Developing new tools
+
+:::: {.columns}
+
+::: {.column width="40%"}
+What happens after pose estimation?
+:::
+
+::: {.column width="60%"}
+```{mermaid}
+%%| file: diagrams/video-pipeline_emph-kino.mmd
+%%| fig-height: 500px
+``` 
+:::
+
+::::
 
 ## Just a code block, nothing gets executed...
 
