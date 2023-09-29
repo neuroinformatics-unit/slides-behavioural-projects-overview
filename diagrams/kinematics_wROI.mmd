@@ -2,7 +2,7 @@ flowchart TB
     classDef emphasis fill:#03A062;
     classDef aside fill:#EB7AC9;
 
-    tracks[bodypart tracks] --> cleaning
+    tracks[keypoint tracks] --> cleaning
     ROIpre([ROI]) -.-> |transform| ROI([ROI])
     ROI --> ROI_metrics
 
@@ -25,24 +25,18 @@ flowchart TB
     end
 
     subgraph ROI_metrics["ROI metrics"]
-    direction LR
+    direction TB
 
     distance[distanco to]
     time[time spent in]
     entries[entries/exits]
     end
 
-    subgraph scalars
-    direction LR
+    subgraph kinematics
+    direction TB
 
     size
-    speed
     angle["joint angle"]
-    end
-
-    subgraph vectors
-    direction LR
-
     orientation
     velocity["(angular) velocity"]
     acceleration["(angular) acceleration"]
@@ -50,9 +44,9 @@ flowchart TB
 
     cleaning--> ROI_metrics
     ROI -.-> fit
-    fit -.-> scalars
+    fit -.-> kinematics
     fit -.-> ROI_metrics
-    cleaning ---> scalars & vectors
+    cleaning ---> kinematics
     cleaning -.-> fit
 
     class ROIpre aside

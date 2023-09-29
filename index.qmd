@@ -18,6 +18,8 @@ format:
         view-distance: 10
         mobile-view-distance: 10
         auto-animate: true
+        auto-animate-easing: ease-in
+        auto-animate-duration: 0.5
         auto-play-media: true
         code-overflow: wrap
         highlight-style: atom-one
@@ -25,6 +27,12 @@ format:
           theme: neutral
           fontFamily: arial
           curve: linear
+        title-slide-attributes: 
+          data-background-color: "#000000"
+          data-background-image: "img/swc-building.jpg" 
+          data-background-size: "cover"
+          data-background-position: "center"
+          data-background-opacity: "0.6"
     html:
         theme: [default, niu-light.scss]
         logo: img/logo_niu_light.png
@@ -41,27 +49,30 @@ format:
         page-layout: full
 ---
 
-## Behavioural experiments at SWC
+## RSEs working on behaviour
 
-:::: {.columns}
+[Neuroinformatics Unit (NIU)](https://neuroinformatics.dev/)
 
-::: {.column width="50%"}
+* Niko Sirmpilatze
+* Chang Huan Lo
+* Adam Tyson
 
-![](img/swc-building.jpg){height=500}
-:::
+[UCL Advanced Research Computing (UCL ARC)](https://www.ucl.ac.uk/advanced-research-computing/)
 
-::: {.column width="50%"}
+* Sofia Miñano
+* Sam Cunliffe
+* Nik K.N. Aznan
 
-A diverse range:
 
-- large collaborative projects
-  - Zoo
-  - Crabs
+# Behavioural experiments at SWC {background-color="#03A062"}
+
+## Diversity of projects
+
+- large collaborative projects  
   - Aeon
-- small-scale lab-specific projects
-:::
-
-::::
+  - Crabs
+  - Zoo
+- lab-specific projects
 
 ## Aeon
 
@@ -98,15 +109,15 @@ A diverse range:
 
 ::: {.column width="50%"}
 - Fiddler crabs
-  - in the wild
-  - in a *naturalistic* lab setting
+  - both in the wild
+  - and in a *naturalistic* lab setting
 - Detection and tracking with custom CNNs
 :::
 
 ::::
 
 ::: aside
-*Image: Sofia Minano* | 
+*Image: Sofia Miñano* | 
 [Branco Lab](https://www.sainsburywellcome.org/web/groups/branco-lab), 
 [Margrie Lab](https://www.sainsburywellcome.org/web/groups/margrie-lab),
 [UCL ARC](https://www.ucl.ac.uk/advanced-research-computing)
@@ -123,7 +134,8 @@ A diverse range:
 
 ::: {.column width="50%"}
 - Videos acquired at the London Zoo
-- Multiple species from 🐝 to 🐘
+- Multiple species:
+  - from 🐝 to 🐘
 - Diverse environments
 - Pose estimation and tracking (DeepLabCut)
 :::
@@ -161,6 +173,14 @@ A diverse range:
 [O'Keefe Lab](https://www.sainsburywellcome.org/web/groups/okeefe-lab)
 :::
 
+## Diversity of needs
+
+- species
+- environments
+- number of animals
+- pose estimation and tracking tools
+- performance
+
 ## Our priority
 
 :::: {.columns}
@@ -182,16 +202,27 @@ Standardised video analysis pipeline, **but**:
 
 ::::
 
-## How to achieve this?
+## How to achieve this? {.smaller}
 
-::: {.incremental}
-- Make existing tools easier to use for researchers
-- Develop new tools to fill gaps in the ecosystem
-- Make existing and new tools interoperable
+::: {.fragment}
+* Make existing tools easier to use for researchers
+  * documentation and teaching
+  * build easy-to-use interfaces/wrappers
 :::
 
+::: {.fragment}
+* Develop new tools to fill gaps in the ecosystem
+  * `movement` Python package
+:::
 
-## Working with existing tools {.smaller}
+::: {.fragment}
+* Make existing and new tools interoperable
+  * The *PoseInterface* project?
+:::
+
+# Working with existing tools {background-color="#03A062"}
+
+## Pose estimation libraries {.smaller}
 
 :::: {.columns}
 
@@ -218,7 +249,7 @@ Pose estimation libraries:
 
 ::::
 
-## Working with existing tools
+## Pose estimation libraries
 
 - Centrally installed modules on HPC cluster
 
@@ -233,73 +264,203 @@ module load SLEAP
 
 ::: {.fragment}
 - Deliver courses and workshops on:
-  - Pose estimation with SLEAP
+  - Pose estimation
   - Linux and HPC
 :::
 
-## Developing new tools
 
-:::: {.columns}
+## Accessible interfaces
 
-::: {.column width="40%"}
-What happens after pose estimation?
+[WAZP web app](https://sainsburywellcomecentre.github.io/WAZP/)
+
+![](img/WAZP-roi-drawing.png){height=450}
+
+::: aside
+With Sofia Miñano & Sam Cunliffe of [UCL ARC](https://www.ucl.ac.uk/advanced-research-computing)
 :::
 
-::: {.column width="60%"}
+
+# Developing new tools {background-color="#03A062"}
+
+## What happens after pose estimation and tracking?
+
 ```{mermaid}
 %%| file: diagrams/video-pipeline_emph-kino.mmd
 %%| fig-height: 500px
 ``` 
+
+## Some common metrics {auto-animate=true auto-animate-id="kino-graph"}
+```{mermaid}
+%%| file: diagrams/kinematics.mmd
+%%| fig-height: 500px
+```
+
+## Some common metrics {auto-animate=true auto-animate-id="kino-graph"}
+
+```{mermaid}
+%%| file: diagrams/kinematics_wROI.mmd
+%%| fig-height: 500px
+```
+
+## Existing tools
+
+| Tool | Scope | Stars | Last Commit |
+| ---- | ---- | ---- | ---- |
+| [DLC2Kinematics](https://github.com/AdaptiveMotorControlLab/DLC2Kinematics) | General | 109 | Jun 2023 |
+| [PyRat](https://github.com/pyratlib/pyrat) | General | 30 | Feb 2023 |
+| [Kino](https://github.com/BrancoLab/Kino) | General | 1 | Dec 2021 |
+| [opendirection](https://github.com/adamltyson/opendirection) | Project | 4 | Jul 2021 |
+| [behavior-opto-analysis](https://github.com/philshams/behavior-opto-analysis) | Project | 0 | May 2022 |
+| [AmadeusGPT](https://amadeusgpt.kinematik.ai/app/) | General | 117 | Sep 2023 |
+
+
+## Enter `movement`
+
+:::: {.columns}
+
+::: {.column width="55%"}
+![](img/movement-repo-screenshot.png)
+:::
+
+::: {.column width="45%"}
+Kinematic analysis of animal movements for neuroscience and ethology research.
+
+- [GitHub repository](https://github.com/neuroinformatics-unit/movement)
+- [Documentation](https://neuroinformatics-unit.github.io/movement/){preview-link="true" style="text-align: center"}
+- [PyPI package](https://pypi.org/project/movement/)
 :::
 
 ::::
 
-## Just a code block, nothing gets executed...
 
-... but there is some fancy highlighting
+## `movement` features {.smaller}
 
-```{.python code-line-numbers="1|3|4-9"}
-from pathlib import Path
-
-home_path = Path.home()
-if home_path.exists():
-  data_path = home_path / "data"
-else:
-  pass
-  # raise some error maybe?
-```
-
-## A code block that's actually executed at render-time
-
-```{python}
-#| echo: true
-#| code-fold: true
-
-from pathlib import Path
-
-print("Hello world")
-```
-
-## You can execute code without showing that you have by using #|echo: false
-```{python}
-#| echo: false
-
-from pathlib import Path
-
-print("Hello world")
-```
-
-{{< include slides/extra_slide.qmd >}}
-
-## An example image
-
-Include an image:
-
-![](img/bg_logo_wide.png){width=900 fig-align=center}
-
-
-## Link and a preview a webpage:
-
-::: {style="text-align: center; margin-top: 1em"}
-[interoperable Python-based tools for computational neuroanatomy](https://brainglobe.info/index.html){preview-link="true" style="text-align: center"}
+::: {.fragment}
+* __I/O:__ (see [example](https://neuroinformatics-unit.github.io/movement/auto_examples/load_and_explore_poses.html#sphx-glr-auto-examples-load-and-explore-poses-py){preview-link="true" style="text-align: center"})
+  * ✅ import pose tracks from `DeepLabCut` and `SLEAP` 
+  * ✅ represent pose tracks in common data structure
+  * 🤔 export data for downstream analysis (e.g. for classifiers)
 :::
+
+::: {.fragment}
+* __Plotting:__ 🏗️ plot pose tracks, ROIs, etc.
+:::
+
+::: {.fragment}
+* __Preproc:__ 🤔 pose track interpolation, smoothing, resampling, etc.
+:::
+
+::: {.fragment}
+* __Kinematics:__ 🤔 velocity, acceleration, orientation, etc.
+:::
+
+::: {.fragment}
+* __Arena:__ 🤔 ROI support and coordinate transformations
+:::
+
+## `movement` GUI
+
+![](img/output.gif){height=500}
+
+::: aside
+Explore the multidimensional image viwer [napari](https://napari.org/stable/)
+:::
+
+## Why napari?
+
+It already comes with built-in [layers](https://napari.org/stable/api/napari.layers.html){preview-link="true" style="text-align: center"} for:
+
+- `Image`: video frames?
+- `Points`: keypoints?
+- `Shapes`: ROIs?
+- `Tracks`: pose tracks?
+- `Vectors`: velocity, acceleration, etc.?
+
+# Interoperability {background-color="#03A062"}
+
+## PoseInterface? {.smaller}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{mermaid}
+%%| file: diagrams/video-pipeline_emph-pose.mmd
+%%| fig-height: 500px
+``` 
+:::
+
+::: {.column width="50%"}
+* Similar to Spike Interface
+  * Common input format (label data once)
+  * Choose a number of pose estimation libraries
+  * Common output format
+* Benefits
+  * Flexibility
+  * Systematic comparisons
+:::
+
+::::
+
+## What about the missing links?
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{mermaid}
+%%| file: diagrams/video-pipeline.mmd
+%%| fig-height: 500px
+``` 
+:::
+
+::: {.column width="50%"}
+* Tools for video compression/enconding
+* Action Segmentation Interface?
+:::
+
+::::
+
+# Further reading {background-color="#03A062"}
+
+## `xarray` data structures {.smaller visibilty="uncounted"}
+
+`DataArray` is an N-dimensional generalisation of pandas `Series`.
+
+- `values`: a numpy.ndarray holding the array's values
+- `dims`: names for each axis (e.g., ['time', 'individuals', 'keypoints'])
+- `coords`: e.g., list of animal names, bodypart names
+- `attrs`: an `OrderedDict` to hold arbitrary metadata (attributes).
+
+::: {.fragment}
+`Dataset` is a collection of aligned `DataArray` objects.
+![](img/xarray-logo.webp){height=200}
+:::
+
+## `xarray` pros and cons {.smaller visibilty="uncounted"}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+__Pros:__
+
+- label-based indexing
+- `numpy`-like vectorisation and broadcasting
+- `pandas`-like aggregation + groupby
+- `dask` + `zarr` integration for parallel computing
+:::
+
+::: {.column width="50%"}
+__Cons:__
+
+- not as widely known as `numpy`/`pandas`
+- learning curve
+:::
+
+::::
+
+## `movement` design aspirations {visibilty="uncounted"}
+
+* __Modularity:__ small, reusable, composable functions
+* __Flexibility:__ future-proof, extensible, configurable
+* __Accessibility:__ API + GUI, muli-platform, docs, tutorials
+* __Maintainability:__ Tests, CI/CD
+* __Performance:__ parallelization
