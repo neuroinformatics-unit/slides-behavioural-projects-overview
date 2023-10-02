@@ -7,4 +7,4 @@ This repository was created using the [quarto-presentation-template](https://git
 
 The content was written with [Quarto](https://quarto.org/), 
 rendered as [reveal.js](https://revealjs.com/) slides and hosted on [GitHub Pages](https://pages.github.com/).
-You can see the rendered [slides here](https://neuroinformatics-unit.github.io/nbehavioural-projects-slides/#/title-slide).
+You can see the rendered [slides here](https://neuroinformatics-unit.github.io/behavioural-projects-slides/#/title-slide).
