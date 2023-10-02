@@ -396,7 +396,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
+<section id="title-slide" data-background-color="#000000" data-background-image="img/swc-building.jpg" data-background-opacity="0.6" data-background-position="center" data-background-size="cover" class="quarto-title-block center">
   <h1 class="title">Behavioural Projects Overview</h1>
   <p class="subtitle">SWC/GCNU Neuroinformatics Unit</p>
 
@@ -409,24 +409,37 @@ Niko Sirmpilatze
 </div>
 
 </section>
-<section id="behavioural-experiments-at-swc" class="slide level2">
-<h2>Behavioural experiments at SWC</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="img/swc-building.jpg" height="500"></p>
-</div><div class="column" style="width:50%;">
-<p>A diverse range:</p>
+<section id="rses-working-on-behaviour" class="slide level2">
+<h2>RSEs working on behaviour</h2>
+<p><a href="https://neuroinformatics.dev/">Neuroinformatics Unit (NIU)</a></p>
+<ul>
+<li>Niko Sirmpilatze</li>
+<li>Chang Huan Lo</li>
+<li>Adam Tyson</li>
+</ul>
+<p><a href="https://www.ucl.ac.uk/advanced-research-computing/">UCL Advanced Research Computing (UCL ARC)</a></p>
+<ul>
+<li>Sofia Miñano</li>
+<li>Sam Cunliffe</li>
+<li>Nik K.N. Aznan</li>
+</ul>
+</section>
+<section>
+<section id="behavioural-experiments-at-swc" class="title-slide slide level1 center" data-background-color="#03A062">
+<h1>Behavioural experiments at SWC</h1>
+
+</section>
+<section id="diversity-of-projects" class="slide level2">
+<h2>Diversity of projects</h2>
 <ul>
 <li>large collaborative projects
 <ul>
-<li>Zoo</li>
-<li>Crabs</li>
 <li>Aeon</li>
+<li>Crabs</li>
+<li>Zoo</li>
 </ul></li>
-<li>small-scale lab-specific projects</li>
+<li>lab-specific projects</li>
 </ul>
-</div>
-</div>
 </section>
 <section id="aeon" class="slide level2">
 <h2>Aeon</h2>
@@ -456,8 +469,8 @@ Niko Sirmpilatze
 <ul>
 <li>Fiddler crabs
 <ul>
-<li>in the wild</li>
-<li>in a <em>naturalistic</em> lab setting</li>
+<li>both in the wild</li>
+<li>and in a <em>naturalistic</em> lab setting</li>
 </ul></li>
 <li>Detection and tracking with custom CNNs</li>
 </ul>
@@ -465,7 +478,7 @@ Niko Sirmpilatze
 </div>
 
 <aside><div>
-<p><em>Image: Sofia Minano</em> | <a href="https://www.sainsburywellcome.org/web/groups/branco-lab">Branco Lab</a>, <a href="https://www.sainsburywellcome.org/web/groups/margrie-lab">Margrie Lab</a>, <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a></p>
+<p><em>Image: Sofia Miñano</em> | <a href="https://www.sainsburywellcome.org/web/groups/branco-lab">Branco Lab</a>, <a href="https://www.sainsburywellcome.org/web/groups/margrie-lab">Margrie Lab</a>, <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a></p>
 </div></aside></section>
 <section id="zoo" class="slide level2">
 <h2>Zoo</h2>
@@ -475,7 +488,10 @@ Niko Sirmpilatze
 </div><div class="column" style="width:50%;">
 <ul>
 <li>Videos acquired at the London Zoo</li>
-<li>Multiple species from 🐝 to 🐘</li>
+<li>Multiple species:
+<ul>
+<li>from 🐝 to 🐘</li>
+</ul></li>
 <li>Diverse environments</li>
 <li>Pose estimation and tracking (DeepLabCut)</li>
 </ul>
@@ -498,6 +514,16 @@ Niko Sirmpilatze
 <aside><div>
 <p><em>Images: Loukia Katsouri</em> | <a href="https://www.sainsburywellcome.org/web/groups/okeefe-lab">O’Keefe Lab</a></p>
 </div></aside></section>
+<section id="diversity-of-needs" class="slide level2">
+<h2>Diversity of needs</h2>
+<ul>
+<li>species</li>
+<li>environments</li>
+<li>number of animals</li>
+<li>pose estimation and tracking tools</li>
+<li>performance</li>
+</ul>
+</section>
 <section id="our-priority" class="slide level2">
 <h2>Our priority</h2>
 <div class="columns">
@@ -529,18 +555,41 @@ Niko Sirmpilatze
 </div>
 </div>
 </section>
-<section id="how-to-achieve-this" class="slide level2">
+<section id="how-to-achieve-this" class="slide level2 smaller">
 <h2>How to achieve this?</h2>
-<div>
+<div class="fragment">
 <ul>
-<li class="fragment">Make existing tools easier to use for researchers</li>
-<li class="fragment">Develop new tools to fill gaps in the ecosystem</li>
-<li class="fragment">Make existing and new tools interoperable</li>
+<li>Make existing tools easier to use for researchers
+<ul>
+<li>documentation and teaching</li>
+<li>build easy-to-use interfaces/wrappers</li>
+</ul></li>
 </ul>
 </div>
+<div class="fragment">
+<ul>
+<li>Develop new tools to fill gaps in the ecosystem
+<ul>
+<li><code>movement</code> Python package</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Make existing and new tools interoperable
+<ul>
+<li>The <em>PoseInterface</em> project?</li>
+</ul></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="working-with-existing-tools" class="title-slide slide level1 center" data-background-color="#03A062">
+<h1>Working with existing tools</h1>
+
 </section>
-<section id="working-with-existing-tools" class="slide level2 smaller">
-<h2>Working with existing tools</h2>
+<section id="pose-estimation-libraries" class="slide level2 smaller">
+<h2>Pose estimation libraries</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <p>Pose estimation libraries:</p>
@@ -579,8 +628,8 @@ Niko Sirmpilatze
 </div>
 </div>
 </section>
-<section id="working-with-existing-tools-1" class="slide level2">
-<h2>Working with existing tools</h2>
+<section id="pose-estimation-libraries-1" class="slide level2">
+<h2>Pose estimation libraries</h2>
 <ul>
 <li>Centrally installed modules on HPC cluster</li>
 </ul>
@@ -595,18 +644,27 @@ Niko Sirmpilatze
 <ul>
 <li>Deliver courses and workshops on:
 <ul>
-<li>Pose estimation with SLEAP</li>
+<li>Pose estimation</li>
 <li>Linux and HPC</li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="developing-new-tools" class="slide level2">
-<h2>Developing new tools</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<p>What happens after pose estimation?</p>
-</div><div class="column" style="width:60%;">
+<section id="accessible-interfaces" class="slide level2">
+<h2>Accessible interfaces</h2>
+<p><a href="https://sainsburywellcomecentre.github.io/WAZP/">WAZP web app</a></p>
+<p><img data-src="img/WAZP-roi-drawing.png" height="450"></p>
+
+<aside><div>
+<p>With Sofia Miñano &amp; Sam Cunliffe of <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a></p>
+</div></aside></section></section>
+<section>
+<section id="developing-new-tools" class="title-slide slide level1 center" data-background-color="#03A062">
+<h1>Developing new tools</h1>
+
+</section>
+<section id="what-happens-after-pose-estimation-and-tracking" class="slide level2">
+<h2>What happens after pose estimation and tracking?</h2>
 <div class="cell" data-reveal="true" data-file="diagrams/video-pipeline_emph-kino.mmd" data-fig-height="500px">
 <div class="cell-output-display">
 <div>
@@ -628,62 +686,384 @@ Niko Sirmpilatze
 </div>
 </div>
 </div>
-</div>
-</div>
 </section>
-<section id="just-a-code-block-nothing-gets-executed" class="slide level2">
-<h2>Just a code block, nothing gets executed…</h2>
-<p>… but there is some fancy highlighting</p>
-<div class="sourceCode" id="cb2" data-code-line-numbers="1|3|4-9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a>home_path <span class="op">=</span> Path.home()</span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="cf">if</span> home_path.exists():</span>
-<span id="cb2-5"><a href="#cb2-5"></a>  data_path <span class="op">=</span> home_path <span class="op">/</span> <span class="st">"data"</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="cf">else</span>:</span>
-<span id="cb2-7"><a href="#cb2-7"></a>  <span class="cf">pass</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a>  <span class="co"># raise some error maybe?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="a-code-block-thats-actually-executed-at-render-time" class="slide level2">
-<h2>A code block that’s actually executed at render-time</h2>
-<div class="cell" data-execution_count="1">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
-<span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="bu">print</span>(<span class="st">"Hello world"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Hello world</code></pre>
-</div>
-</div>
-</section>
-<section id="you-can-execute-code-without-showing-that-you-have-by-using-echo-false" class="slide level2">
-<h2>You can execute code without showing that you have by using #|echo: false</h2>
-<div class="cell" data-execution_count="2">
-<div class="cell-output cell-output-stdout">
-<pre><code>Hello world</code></pre>
-</div>
-</div>
-</section>
-<section id="a-slide-imported-from-outside-the-qmd" class="slide level2">
-<h2>A slide imported from outside the qmd</h2>
-<p>This will become an example about how to use a common slide deck for the group.</p>
-</section>
-<section id="an-example-image" class="slide level2">
-<h2>An example image</h2>
-<p>Include an image:</p>
+<section id="some-common-metrics" class="slide level2" data-auto-animate="true" data-auto-animate-id="kino-graph">
+<h2 data-id="quarto-animate-title">Some common metrics</h2>
+<div class="cell" data-reveal="true" data-file="diagrams/kinematics.mmd" data-fig-height="500px">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    classDef emphasis fill:#03A062;
 
-<img data-src="img/bg_logo_wide.png" width="900" class="r-stretch quarto-figure-center"></section>
-<section id="link-and-a-preview-a-webpage" class="slide level2">
-<h2>Link and a preview a webpage:</h2>
-<div style="text-align: center; margin-top: 1em">
-<p><a href="https://brainglobe.info/index.html" data-preview-link="true" style="text-align: center">interoperable Python-based tools for computational neuroanatomy</a></p>
+    tracks[keypoint tracks] --&gt; cleaning
+
+    subgraph cleaning
+    direction TB
+
+    drop["drop bad values"]
+    interp["interpolate"]
+    smooth["smooth"]
+    transform
+    end
+
+    subgraph fit["fit shape"]
+    direction TB
+
+    ellipse
+    bbox["bounding box"]
+    center["center-of-mass"]
+    end
+
+    subgraph kinematics
+    direction TB
+
+    size
+    angle["joint angle"]
+    orientation
+    velocity["(angular) velocity"]
+    acceleration["(angular) acceleration"]
+    end
+
+
+    fit -.-&gt; kinematics
+    cleaning ---&gt; kinematics
+    cleaning -.-&gt; fit
+
+    class tracks emphasis
+    class velocity emphasis
+    class acceleration emphasis
+    class orientation emphasis
+    class size emphasis
+    class speed emphasis
+    class angle emphasis
+</pre>
 </div>
+</div>
+</div>
+</div>
+</section>
+<section id="some-common-metrics-1" class="slide level2" data-auto-animate="true" data-auto-animate-id="kino-graph">
+<h2 data-id="quarto-animate-title">Some common metrics</h2>
+<div class="cell" data-reveal="true" data-file="diagrams/kinematics_wROI.mmd" data-fig-height="500px">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    classDef emphasis fill:#03A062;
+    classDef aside fill:#EB7AC9;
+
+    tracks[keypoint tracks] --&gt; cleaning
+    ROIpre([ROI]) -.-&gt; |transform| ROI([ROI])
+    ROI --&gt; ROI_metrics
+
+
+    subgraph cleaning
+    direction TB
+
+    drop["drop bad values"]
+    interp["interpolate"]
+    smooth["smooth"]
+    transform
+    end
+
+    subgraph fit["fit shape"]
+    direction TB
+
+    ellipse
+    bbox["bounding box"]
+    center["center-of-mass"]
+    end
+
+    subgraph ROI_metrics["ROI metrics"]
+    direction TB
+
+    distance[distanco to]
+    time[time spent in]
+    entries[entries/exits]
+    end
+
+    subgraph kinematics
+    direction TB
+
+    size
+    angle["joint angle"]
+    orientation
+    velocity["(angular) velocity"]
+    acceleration["(angular) acceleration"]
+    end
+
+    cleaning--&gt; ROI_metrics
+    ROI -.-&gt; fit
+    fit -.-&gt; kinematics
+    fit -.-&gt; ROI_metrics
+    cleaning ---&gt; kinematics
+    cleaning -.-&gt; fit
+
+    class ROIpre aside
+    class ROI aside
+    class distance aside
+    class time aside
+    class entries aside
+
+    class tracks emphasis
+    class velocity emphasis
+    class acceleration emphasis
+    class orientation emphasis
+    class size emphasis
+    class speed emphasis
+    class angle emphasis
+</pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="existing-tools" class="slide level2">
+<h2>Existing tools</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th>Scope</th>
+<th>Stars</th>
+<th>Last Commit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://github.com/AdaptiveMotorControlLab/DLC2Kinematics">DLC2Kinematics</a></td>
+<td>General</td>
+<td>109</td>
+<td>Jun 2023</td>
+</tr>
+<tr class="even">
+<td><a href="https://github.com/pyratlib/pyrat">PyRat</a></td>
+<td>General</td>
+<td>30</td>
+<td>Feb 2023</td>
+</tr>
+<tr class="odd">
+<td><a href="https://github.com/BrancoLab/Kino">Kino</a></td>
+<td>General</td>
+<td>1</td>
+<td>Dec 2021</td>
+</tr>
+<tr class="even">
+<td><a href="https://github.com/adamltyson/opendirection">opendirection</a></td>
+<td>Project</td>
+<td>4</td>
+<td>Jul 2021</td>
+</tr>
+<tr class="odd">
+<td><a href="https://github.com/philshams/behavior-opto-analysis">behavior-opto-analysis</a></td>
+<td>Project</td>
+<td>0</td>
+<td>May 2022</td>
+</tr>
+<tr class="even">
+<td><a href="https://amadeusgpt.kinematik.ai/app/">AmadeusGPT</a></td>
+<td>General</td>
+<td>117</td>
+<td>Sep 2023</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enter-movement" class="slide level2">
+<h2>Enter <code>movement</code></h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><img data-src="img/movement-repo-screenshot.png"></p>
+</div><div class="column" style="width:45%;">
+<p>Kinematic analysis of animal movements for neuroscience and ethology research.</p>
+<ul>
+<li><a href="https://github.com/neuroinformatics-unit/movement">GitHub repository</a></li>
+<li><a href="https://neuroinformatics-unit.github.io/movement/" data-preview-link="true" style="text-align: center">Documentation</a></li>
+<li><a href="https://pypi.org/project/movement/">PyPI package</a></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="movement-features" class="slide level2 smaller">
+<h2><code>movement</code> features</h2>
+<div class="fragment">
+<ul>
+<li><strong>I/O:</strong> (see <a href="https://neuroinformatics-unit.github.io/movement/auto_examples/load_and_explore_poses.html#sphx-glr-auto-examples-load-and-explore-poses-py" data-preview-link="true" style="text-align: center">example</a>)
+<ul>
+<li>✅ import pose tracks from <code>DeepLabCut</code> and <code>SLEAP</code></li>
+<li>✅ represent pose tracks in common data structure</li>
+<li>🤔 export data for downstream analysis (e.g.&nbsp;for classifiers)</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Plotting:</strong> 🏗️ plot pose tracks, ROIs, etc.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Preproc:</strong> 🤔 pose track interpolation, smoothing, resampling, etc.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Kinematics:</strong> 🤔 velocity, acceleration, orientation, etc.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Arena:</strong> 🤔 ROI support and coordinate transformations</li>
+</ul>
+</div>
+</section>
+<section id="movement-gui" class="slide level2">
+<h2><code>movement</code> GUI</h2>
+<p><img data-src="img/output.gif" height="500"></p>
+
+<aside><div>
+<p>Explore the multidimensional image viwer <a href="https://napari.org/stable/">napari</a></p>
+</div></aside></section>
+<section id="why-napari" class="slide level2">
+<h2>Why napari?</h2>
+<p>It already comes with built-in <a href="https://napari.org/stable/api/napari.layers.html" data-preview-link="true" style="text-align: center">layers</a> for:</p>
+<ul>
+<li><code>Image</code>: video frames?</li>
+<li><code>Points</code>: keypoints?</li>
+<li><code>Shapes</code>: ROIs?</li>
+<li><code>Tracks</code>: pose tracks?</li>
+<li><code>Vectors</code>: velocity, acceleration, etc.?</li>
+</ul>
+</section></section>
+<section>
+<section id="interoperability" class="title-slide slide level1 center" data-background-color="#03A062">
+<h1>Interoperability</h1>
+
+</section>
+<section id="poseinterface" class="slide level2 smaller">
+<h2>PoseInterface?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-reveal="true" data-file="diagrams/video-pipeline_emph-pose.mmd" data-fig-height="500px">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    classDef emphasis fill:#03A062;
+
+    video --&gt;|compression/re-encoding | video2["compressed video"]
+    video2 --&gt;|pose estimation + tracking| tracks["pose tracks"]
+    tracks --&gt; |calculations| kinematics
+    tracks --&gt;|classifiers| actions["actions / behav syllables"]
+    video2 --&gt; |comp vision| actions
+
+    linkStyle 1 stroke:#03A062, color:;
+    class video2 emphasis
+    class tracks emphasis
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Similar to Spike Interface
+<ul>
+<li>Common input format (label data once)</li>
+<li>Choose a number of pose estimation libraries</li>
+<li>Common output format</li>
+</ul></li>
+<li>Benefits
+<ul>
+<li>Flexibility</li>
+<li>Systematic comparisons</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="what-about-the-missing-links" class="slide level2">
+<h2>What about the missing links?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-reveal="true" data-file="diagrams/video-pipeline.mmd" data-fig-height="500px">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    classDef emphasis fill:#03A062;
+
+    video --&gt;|compression/re-encoding | video2["compressed video"]
+    video2 --&gt;|pose estimation + tracking| tracks["pose tracks"]
+    tracks --&gt; |calculations| kinematics
+    tracks --&gt;|classifiers| actions["actions / behav syllables"]
+    video2 --&gt; |comp vision| actions
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Tools for video compression/enconding</li>
+<li>Action Segmentation Interface?</li>
+</ul>
+</div>
+</div>
+</section></section>
+<section>
+<section id="further-reading" class="title-slide slide level1 center" data-background-color="#03A062">
+<h1>Further reading</h1>
+
+</section>
+<section id="xarray-data-structures" class="slide level2 smaller" data-visibilty="uncounted">
+<h2><code>xarray</code> data structures</h2>
+<p><code>DataArray</code> is an N-dimensional generalisation of pandas <code>Series</code>.</p>
+<ul>
+<li><code>values</code>: a numpy.ndarray holding the array’s values</li>
+<li><code>dims</code>: names for each axis (e.g., [‘time’, ‘individuals’, ‘keypoints’])</li>
+<li><code>coords</code>: e.g., list of animal names, bodypart names</li>
+<li><code>attrs</code>: an <code>OrderedDict</code> to hold arbitrary metadata (attributes).</li>
+</ul>
+<div class="fragment">
+<p><code>Dataset</code> is a collection of aligned <code>DataArray</code> objects. <img data-src="img/xarray-logo.webp" height="200"></p>
+</div>
+</section>
+<section id="xarray-pros-and-cons" class="slide level2 smaller" data-visibilty="uncounted">
+<h2><code>xarray</code> pros and cons</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Pros:</strong></p>
+<ul>
+<li>label-based indexing</li>
+<li><code>numpy</code>-like vectorisation and broadcasting</li>
+<li><code>pandas</code>-like aggregation + groupby</li>
+<li><code>dask</code> + <code>zarr</code> integration for parallel computing</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Cons:</strong></p>
+<ul>
+<li>not as widely known as <code>numpy</code>/<code>pandas</code></li>
+<li>learning curve</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="movement-design-aspirations" class="slide level2" data-visibilty="uncounted">
+<h2><code>movement</code> design aspirations</h2>
+<ul>
+<li><strong>Modularity:</strong> small, reusable, composable functions</li>
+<li><strong>Flexibility:</strong> future-proof, extensible, configurable</li>
+<li><strong>Accessibility:</strong> API + GUI, muli-platform, docs, tutorials</li>
+<li><strong>Maintainability:</strong> Tests, CI/CD</li>
+<li><strong>Performance:</strong> parallelization</li>
+</ul>
 
 <img src="img/logo_niu_light.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p>Discussion with AIND | 2023-09-29</p>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
@@ -713,8 +1093,8 @@ Niko Sirmpilatze
 'previewLinksAuto': false,
 'smaller': false,
 'pdfSeparateFragments': false,
-'autoAnimateEasing': "ease",
-'autoAnimateDuration': 1,
+'autoAnimateEasing': "ease-in",
+'autoAnimateDuration': 0.5,
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true,"numbers":true},
 'chalkboard': {"buttons":true},
