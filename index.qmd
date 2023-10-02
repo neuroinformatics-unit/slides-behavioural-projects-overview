@@ -304,14 +304,13 @@ With Sofia Miñano & Sam Cunliffe of [UCL ARC](https://www.ucl.ac.uk/advanced-re
 
 ## Existing tools
 
-| Tool | Scope | Stars | Last Commit |
-| ---- | ---- | ---- | ---- |
-| [DLC2Kinematics](https://github.com/AdaptiveMotorControlLab/DLC2Kinematics) | General | 109 | Jun 2023 |
-| [PyRat](https://github.com/pyratlib/pyrat) | General | 30 | Feb 2023 |
-| [Kino](https://github.com/BrancoLab/Kino) | General | 1 | Dec 2021 |
-| [opendirection](https://github.com/adamltyson/opendirection) | Project | 4 | Jul 2021 |
-| [behavior-opto-analysis](https://github.com/philshams/behavior-opto-analysis) | Project | 0 | May 2022 |
-| [AmadeusGPT](https://amadeusgpt.kinematik.ai/app/) | General | 117 | Sep 2023 |
+| Tool | Stars | Last Commit |
+| ---- | ---- | ---- |
+| [movingpandas](https://github.com/movingpandas/movingpandas) | ~1k | Aug 2023 |
+| [AmadeusGPT](https://amadeusgpt.kinematik.ai/app/) | 117 | Sep 2023 |
+| [DLC2Kinematics](https://github.com/AdaptiveMotorControlLab/DLC2Kinematics) | 109 | Jun 2023 |
+| [traja](https://github.com/traja-team/traja) | 79 | Oct 2022 |
+| [PyRat](https://github.com/pyratlib/pyrat) | 30 | Feb 2023 |
 
 
 ## Enter `movement`
@@ -363,7 +362,7 @@ Kinematic analysis of animal movements for neuroscience and ethology research.
 ![](img/output.gif){height=500}
 
 ::: aside
-Explore the multidimensional image viwer [napari](https://napari.org/stable/)
+Explore the multidimensional image viewer [napari](https://napari.org/stable/)
 :::
 
 ## Why napari?
@@ -378,7 +377,31 @@ It already comes with built-in [layers](https://napari.org/stable/api/napari.lay
 
 # Interoperability {background-color="#03A062"}
 
-## PoseInterface? {.smaller}
+## Video compression {.smaller}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{mermaid}
+%%| file: diagrams/video-pipeline_emph-compr.mmd
+%%| fig-height: 500px
+``` 
+:::
+
+::: {.column width="50%"}
+* What's the best format/codec for saving videos?
+* Trade-off between file size and quality
+* Compressed videos must be readable by all major pose estimation libraries
+* Ideally videos are compressed during (or directly after) acqusition
+:::
+
+::::
+
+::: aside
+Could be addressed by a larger collaboration
+:::
+
+## Pose Interface? {.smaller}
 
 :::: {.columns}
 
@@ -390,36 +413,48 @@ It already comes with built-in [layers](https://napari.org/stable/api/napari.lay
 :::
 
 ::: {.column width="50%"}
-* Similar to Spike Interface
+Similar to [SpikeInterface](https://spikeinterface.readthedocs.io/en/latest/)
+
   * Common input format (label data once)
   * Choose a number of pose estimation libraries
   * Common output format
-* Benefits
-  * Flexibility
-  * Systematic comparisons
 :::
 
 ::::
 
-## What about the missing links?
+::: aside
+Would allow for flexibility and facilitate systematic comparisons
+:::
+
+## From behaviour to actions {.smaller}
 
 :::: {.columns}
 
 ::: {.column width="50%"}
 ```{mermaid}
-%%| file: diagrams/video-pipeline.mmd
+%%| file: diagrams/video-pipeline_emph-classifiers.mmd
 %%| fig-height: 500px
 ``` 
 :::
 
 ::: {.column width="50%"}
-* Tools for video compression/enconding
-* Action Segmentation Interface?
+Several tools:
+
+- [SimBA](https://github.com/sgoldenlab/simba)
+- [MoSeq](https://dattalab.github.io/moseq2-website/index.html)
+- [VAME](https://edspace.american.edu/openbehavior/project/vame/)
+- [B-SOID](https://github.com/YttriLab/B-SOID)
+- [DLC2action](https://github.com/amathislab/DLC2action)
 :::
 
 ::::
 
-# Further reading {background-color="#03A062"}
+::: aside
+We need a standard way of passing data to these tools.
+:::
+
+
+# Appendix {background-color="#03A062"}
 
 ## `xarray` data structures {.smaller visibilty="uncounted"}
 
