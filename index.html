@@ -642,7 +642,7 @@ Niko Sirmpilatze
 </div>
 <div class="fragment">
 <ul>
-<li>Deliver courses and workshops on:
+<li>Deliver <a href="https://software-skills.neuroinformatics.dev/" data-preview-link="true" style="text-align: center">courses and workshops</a> on:
 <ul>
 <li>Pose estimation</li>
 <li>Linux and HPC</li>
@@ -825,47 +825,35 @@ Niko Sirmpilatze
 <thead>
 <tr class="header">
 <th>Tool</th>
-<th>Scope</th>
 <th>Stars</th>
 <th>Last Commit</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td><a href="https://github.com/movingpandas/movingpandas">movingpandas</a></td>
+<td>~1k</td>
+<td>Aug 2023</td>
+</tr>
+<tr class="even">
+<td><a href="https://amadeusgpt.kinematik.ai/app/">AmadeusGPT</a></td>
+<td>117</td>
+<td>Sep 2023</td>
+</tr>
+<tr class="odd">
 <td><a href="https://github.com/AdaptiveMotorControlLab/DLC2Kinematics">DLC2Kinematics</a></td>
-<td>General</td>
 <td>109</td>
 <td>Jun 2023</td>
 </tr>
 <tr class="even">
+<td><a href="https://github.com/traja-team/traja">traja</a></td>
+<td>79</td>
+<td>Oct 2022</td>
+</tr>
+<tr class="odd">
 <td><a href="https://github.com/pyratlib/pyrat">PyRat</a></td>
-<td>General</td>
 <td>30</td>
 <td>Feb 2023</td>
-</tr>
-<tr class="odd">
-<td><a href="https://github.com/BrancoLab/Kino">Kino</a></td>
-<td>General</td>
-<td>1</td>
-<td>Dec 2021</td>
-</tr>
-<tr class="even">
-<td><a href="https://github.com/adamltyson/opendirection">opendirection</a></td>
-<td>Project</td>
-<td>4</td>
-<td>Jul 2021</td>
-</tr>
-<tr class="odd">
-<td><a href="https://github.com/philshams/behavior-opto-analysis">behavior-opto-analysis</a></td>
-<td>Project</td>
-<td>0</td>
-<td>May 2022</td>
-</tr>
-<tr class="even">
-<td><a href="https://amadeusgpt.kinematik.ai/app/">AmadeusGPT</a></td>
-<td>General</td>
-<td>117</td>
-<td>Sep 2023</td>
 </tr>
 </tbody>
 </table>
@@ -923,7 +911,7 @@ Niko Sirmpilatze
 <p><img data-src="img/output.gif" height="500"></p>
 
 <aside><div>
-<p>Explore the multidimensional image viwer <a href="https://napari.org/stable/">napari</a></p>
+<p>Explore the multidimensional image viewer <a href="https://napari.org/stable/">napari</a></p>
 </div></aside></section>
 <section id="why-napari" class="slide level2">
 <h2>Why napari?</h2>
@@ -941,8 +929,46 @@ Niko Sirmpilatze
 <h1>Interoperability</h1>
 
 </section>
-<section id="poseinterface" class="slide level2 smaller">
-<h2>PoseInterface?</h2>
+<section id="video-compression" class="slide level2 smaller">
+<h2>Video compression</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-reveal="true" data-file="diagrams/video-pipeline_emph-compr.mmd" data-fig-height="500px">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    classDef emphasis fill:#03A062;
+
+    video --&gt;|compression/re-encoding | video2["compressed video"]
+    video2 --&gt;|pose estimation + tracking| tracks["pose tracks"]
+    tracks --&gt; |calculations| kinematics
+    tracks --&gt;|classifiers| actions["actions / behav syllables"]
+    video2 --&gt; |comp vision| actions
+
+    linkStyle 0 stroke:#03A062, color:;
+    class video emphasis
+    class video2 emphasis
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>What’s the best format/codec for saving videos?</li>
+<li>Trade-off between file size and quality</li>
+<li>Compressed videos must be readable by all major pose estimation libraries</li>
+<li>Ideally videos are compressed during (or directly after) acqusition</li>
+</ul>
+</div>
+</div>
+
+<aside><div>
+<p>Could be addressed by a larger collaboration</p>
+</div></aside></section>
+<section id="pose-interface" class="slide level2 smaller">
+<h2>Pose Interface?</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell" data-reveal="true" data-file="diagrams/video-pipeline_emph-pose.mmd" data-fig-height="500px">
@@ -967,27 +993,23 @@ Niko Sirmpilatze
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<ul>
-<li>Similar to Spike Interface
+<p>Similar to <a href="https://spikeinterface.readthedocs.io/en/latest/">SpikeInterface</a></p>
 <ul>
 <li>Common input format (label data once)</li>
 <li>Choose a number of pose estimation libraries</li>
 <li>Common output format</li>
-</ul></li>
-<li>Benefits
-<ul>
-<li>Flexibility</li>
-<li>Systematic comparisons</li>
-</ul></li>
 </ul>
 </div>
 </div>
-</section>
-<section id="what-about-the-missing-links" class="slide level2">
-<h2>What about the missing links?</h2>
+
+<aside><div>
+<p>Would allow for flexibility and facilitate systematic comparisons</p>
+</div></aside></section>
+<section id="from-behaviour-to-actions" class="slide level2 smaller">
+<h2>From behaviour to actions</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="cell" data-reveal="true" data-file="diagrams/video-pipeline.mmd" data-fig-height="500px">
+<div class="cell" data-reveal="true" data-file="diagrams/video-pipeline_emph-classifiers.mmd" data-fig-height="500px">
 <div class="cell-output-display">
 <div>
 <div>
@@ -999,22 +1021,35 @@ Niko Sirmpilatze
     tracks --&gt; |calculations| kinematics
     tracks --&gt;|classifiers| actions["actions / behav syllables"]
     video2 --&gt; |comp vision| actions
+
+    linkStyle 3 stroke:#03A062, color:;
+    linkStyle 4 stroke:#03A062, color:;
+    class tracks emphasis
+    class video2 emphasis
+    class actions emphasis
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
+<p>Several tools:</p>
 <ul>
-<li>Tools for video compression/enconding</li>
-<li>Action Segmentation Interface?</li>
+<li><a href="https://github.com/sgoldenlab/simba">SimBA</a></li>
+<li><a href="https://dattalab.github.io/moseq2-website/index.html">MoSeq</a></li>
+<li><a href="https://edspace.american.edu/openbehavior/project/vame/">VAME</a></li>
+<li><a href="https://github.com/YttriLab/B-SOID">B-SOID</a></li>
+<li><a href="https://github.com/amathislab/DLC2action">DLC2action</a></li>
 </ul>
 </div>
 </div>
-</section></section>
+
+<aside><div>
+<p>We need a standard way of passing data to these tools.</p>
+</div></aside></section></section>
 <section>
-<section id="further-reading" class="title-slide slide level1 center" data-background-color="#03A062">
-<h1>Further reading</h1>
+<section id="appendix" class="title-slide slide level1 center" data-background-color="#03A062">
+<h1>Appendix</h1>
 
 </section>
 <section id="xarray-data-structures" class="slide level2 smaller" data-visibilty="uncounted">
@@ -1061,7 +1096,7 @@ Niko Sirmpilatze
 </ul>
 
 <img src="img/logo_niu_light.png" class="slide-logo r-stretch"><div class="footer footer-default">
-<p>Discussion with AIND | 2023-09-29</p>
+<p>Meeting with Keshavarzi Lab | 2023-10-02</p>
 </div>
 </section></section>
     </div>
