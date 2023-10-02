@@ -263,7 +263,7 @@ module load SLEAP
 :::
 
 ::: {.fragment}
-- Deliver courses and workshops on:
+- Deliver [courses and workshops](https://software-skills.neuroinformatics.dev/){preview-link="true" style="text-align: center"} on:
   - Pose estimation
   - Linux and HPC
 :::
