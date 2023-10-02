@@ -1,7 +1,7 @@
 flowchart TB
     classDef emphasis fill:#03A062;
 
-    tracks[bodypart tracks] --> cleaning
+    tracks[keypoint tracks] --> cleaning
 
     subgraph cleaning
     direction TB
@@ -20,24 +20,19 @@ flowchart TB
     center["center-of-mass"]
     end
 
-    subgraph scalars
-    direction LR
+    subgraph kinematics
+    direction TB
 
     size
-    speed
     angle["joint angle"]
-    end
-
-    subgraph vectors
-    direction LR
-
     orientation
     velocity["(angular) velocity"]
     acceleration["(angular) acceleration"]
     end
 
-    fit -.-> scalars
-    cleaning ---> scalars & vectors
+
+    fit -.-> kinematics
+    cleaning ---> kinematics
     cleaning -.-> fit
 
     class tracks emphasis
