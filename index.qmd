@@ -8,7 +8,7 @@ format:
     revealjs:
         theme: [default, niu-light.scss]
         logo: img/logo_niu_light.png
-        footer: "Discussion with AIND | 2023-09-29"
+        footer: "Meeting with Keshavarzi Lab | 2023-10-02"
         slide-number: c
         menu:
             numbers: true
