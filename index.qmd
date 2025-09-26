@@ -21,3 +21,47 @@ format:
 
 # Behavioural experiments at SWC {background-color="#03A062"}
 
+## A variety of projects
+
+- Species: mouse, rat, fiddler crab, insects
+- Setups: head-fixed and free-moving
+- Tasks: open field, social behaviour, decision-making, foraging, etc.
+- Experimental control: [bonsai](https://bonsai-rx.org/), [Bpod](https://sanworks.github.io/Bpod_Wiki/), custom...
+- Tracking: a mix of DeepLabCut & SLEAP
+
+## Our strategy
+
+- Don't reinvent the wheel:
+  - use existing tools where possible
+  - focus on trainings for those
+- Develop new tools where necessary
+  - Identify common but unserved needs
+  - Develop general-purpose tools fill the gap
+
+## Marker-based vs markerless tracking {.smaller}
+
+::: {#fig-motion-capture layout="[[40, 60], [100]]" layout-valign="bottom" width="500"}
+![By danceinthesky, openverse.org](img/motion_capture.jpg)
+
+![Source: @ants_crispr_2017](img/ants_colored.jpeg)
+
+![Source: @mathis_primer_2020](img/from_pixels_to_keypoints.png)
+:::
+
+
+## The rise of markerless methods
+
+::: {#fig-two-traditions layout="[[25,25,50]]"}
+![By Ethan Tyler & Lex Kravitz, scidraw.io](img/mouse_lever.svg)
+
+![By Andrea Colins Rodriguez, scidraw.io](img/Monkey_schematic.svg)
+
+![Excerpt from a fiddler crab ethogram by Sanna Titus](img/crab_ethogram.png)
+
+:::
+
+
+## References
+
+::: {#refs}
+:::
