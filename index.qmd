@@ -1,53 +1,12 @@
 ---
 title: Behavioural Projects Overview
 subtitle: SWC/GCNU Neuroinformatics Unit
-author: Niko Sirmpilatze
-execute: 
-  enabled: true
+author: Niko Sirmpilatze, Sofia Miñano, Chang Huan Lo
 format:
-    revealjs:
-        theme: [default, niu-light.scss]
-        logo: img/logo_niu_light.png
-        footer: "Meeting with Keshavarzi Lab | 2023-10-02"
-        slide-number: c
-        menu:
-            numbers: true
-        chalkboard: true
-        scrollable: true
-        preview-links: false
-        view-distance: 10
-        mobile-view-distance: 10
-        auto-animate: true
-        auto-animate-easing: ease-in
-        auto-animate-duration: 0.5
-        auto-play-media: true
-        code-overflow: wrap
-        highlight-style: atom-one
-        mermaid: 
-          theme: neutral
-          fontFamily: arial
-          curve: linear
-        title-slide-attributes: 
-          data-background-color: "#000000"
-          data-background-image: "img/swc-building.jpg" 
-          data-background-size: "cover"
-          data-background-position: "center"
-          data-background-opacity: "0.6"
-    html:
-        theme: [default, niu-light.scss]
-        logo: img/logo_niu_light.png
-        date: "2023-09-29"
-        toc: true
-        code-overflow: scroll
-        highlight-style: atom-one
-        mermaid: 
-          theme: neutral
-          fontFamily: arial
-          curve: linear
-          margin-left: 0
-        embed-resources: true
-        page-layout: full
+  revealjs:
+    footer: "Allen - IBL - NIU retreat | 2025-10-15"
 ---
+
 
 ## RSEs working on behaviour
 
@@ -55,14 +14,7 @@ format:
 
 * Niko Sirmpilatze
 * Chang Huan Lo
-* Adam Tyson
-
-[UCL Advanced Research Computing (UCL ARC)](https://www.ucl.ac.uk/advanced-research-computing/)
-
 * Sofia Miñano
-* Sam Cunliffe
-* Nik K.N. Aznan
-
 
 # Behavioural experiments at SWC {background-color="#03A062"}
 
