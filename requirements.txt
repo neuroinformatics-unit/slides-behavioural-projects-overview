@@ -1,3 +1,4 @@
 movement>=0.10.0
+tables>=3.10.0
 jupyter
 jupyter-cache
