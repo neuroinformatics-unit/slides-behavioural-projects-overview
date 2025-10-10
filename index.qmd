@@ -4,7 +4,7 @@ subtitle: SWC/GCNU Neuroinformatics Unit
 author: Niko Sirmpilatze, Sofia Miñano, Chang Huan Lo
 format:
   revealjs:
-    footer: "Allen-IBL-NIU retreat | 2025-10-15"
+    footer: "IBL-AIND-NIU retreat | 2025-10-15"
 ---
 
 
@@ -23,43 +23,190 @@ format:
 
 ## A variety of projects
 
-- Species: mouse, rat, fiddler crab, insects
-- Setups: head-fixed and free-moving
-- Tasks: open field, social behaviour, decision-making, foraging, etc.
+```{python}
+#| code-fold: true
+
+from matplotlib import pyplot as plt
+from movement import sample_data
+
+
+fname_dict = {
+  "Pupil tracking (Margrie Lab)": "DLC_rotating-mouse_eye-tracking_stim-black.predictions.h5",
+  "EPM (O'Keefe Lab)": "DLC_single-mouse_EPM.predictions.h5",
+  "Home-cage monitoring (O'Keefe Lab)": "DLC_smart-kage3_datetime-20240417T090006.predictions.h5",
+  "Foraging mice (aeon.swc.ucl.ac.uk)": "SLEAP_three-mice_Aeon_proofread.analysis.h5",
+  "Social decision-making (Duan Lab)": "SLEAP_two-mice_octagon.analysis.h5",
+  "Foraging wasp (Margrie & Branco Labs)": "DLC_single-wasp.predictions.h5",
+}
+
+ds_dict = {
+  lab: sample_data.fetch_dataset(fname, with_video=False)
+  for lab, fname in fname_dict.items()
+}
+
+frame_dict = {
+  lab: plt.imread(ds.frame_path) for lab, ds in ds_dict.items()
+}
+```
+
+```{python}
+# | code-fold: true
+
+# Make a figure with 2 rows and 3 columns
+fig, ax = plt.subplots(2, 3, figsize=(12, 7.5))
+
+for i, (lab, frame) in enumerate(frame_dict.items()):
+    r = i // 3
+    c = i % 3
+    ax[r, c].imshow(frame)
+    ax[r, c].set_title(lab)
+    ax[r, c].axis("off")
+
+fig.tight_layout()
+plt.show()
+```
+
+
+## A variety of needs
+
+- Species: :mouse: :rat: :crab: :bee:
+- Some head-fixed but mostly free-moving
 - Experimental control: [bonsai](https://bonsai-rx.org/), [Bpod](https://sanworks.github.io/Bpod_Wiki/), custom...
-- Tracking: a mix of DeepLabCut & SLEAP
+- Tracking: a mix of [DeepLabCut](https://www.mackenziemathislab.org/deeplabcut) & [SLEAP](https://sleap.ai/)
 
-## Our strategy
+:::: {.fragment}
 
-- Don't reinvent the wheel:
-  - use existing tools where possible
-  - focus on trainings for those
-- Develop new tools where necessary
-  - Identify common but unserved needs
-  - Develop general-purpose tools fill the gap
+::: {.callout-note}
+## A single standardised workflow won't do.
 
-## Marker-based vs markerless tracking {.smaller}
+We need general-purpose, versatile, interoperable tools that can be
+reliably mixed and matched to different needs.
+:::
 
-::: {#fig-motion-capture layout="[[40, 60], [100]]" layout-valign="bottom" width="500"}
-![By danceinthesky, openverse.org](img/motion_capture.jpg)
+::::
 
-![Source: @ants_crispr_2017](img/ants_colored.jpeg)
 
-![Source: @mathis_primer_2020](img/from_pixels_to_keypoints.png)
+## Our approach
+
+- What are common workflows and tasks?
+ 
+::: {.fragment}
+- Which needs are already well-served?
+  - **Support and teach existing tools.**
+:::
+
+::: {.fragment}
+- Which needs are not adequately served?
+  - **Develop new tools.**
 :::
 
 
 ## The rise of markerless methods
 
-::: {#fig-two-traditions layout="[[25,25,50]]"}
-![By Ethan Tyler & Lex Kravitz, scidraw.io](img/mouse_lever.svg)
+:::: {.columns}
 
-![By Andrea Colins Rodriguez, scidraw.io](img/Monkey_schematic.svg)
+::: {.column width="45%"}
+![mackenziemathislab.org/deeplabcut](img/MousereachGIF.gif)
+:::
 
-![Excerpt from a fiddler crab ethogram by Sanna Titus](img/crab_ethogram.png)
+::: {.column width="55%"}
+![sleap.ai](img/sleap_movie.gif)
+:::
+
+::::
+
+
+## The rise of markerless methods
+
+![](img/fields_converge_on_tracking.png)
+
+
+## Common workflows
+
+![](img/neuroethology_workflow.png){height=500}
+
+::: footer
+Modern computational neuroethology workflow
+:::
+
+## `movement` overview
+
+![](img/movement_overview.png)
+
+::: footer
+[movement.neuroinformatics.dev](https://movement.neuroinformatics.dev/)
+:::
+
+## `movement` GUI
+
+{{< video "img/gui_tracks_demo.mp4" aspect-ratio="16x9" >}}
+
+::: footer
+[Sample data](https://movement.neuroinformatics.dev/user_guide/input_output.html#sample-data): from *Ann Duan's Lab* |.
+:::
+
+## `movement` example applications {.smaller}
+
+See [movement.neuroinformatics.dev/examples](https://movement.neuroinformatics.dev/examples/) for more.
+
+::: {layout="[[25, 25, 20, 20], [40, 20, 40]]"}
+
+::: {.fragment fragment-index=2}
+![](img/centroid_trajectory.png)
+:::
+
+::: {.fragment fragment-index=2}
+![](img/occupancy_heatmap.png)
+:::
+
+::: {.fragment fragment-index=3}
+![](img/rois.png)
+:::
+
+::: {.fragment fragment-index=3}
+![](img/head_direction_angle.png)
+:::
+
+::: {.fragment fragment-index=1}
+![](img/raw_vs_clean.png)
+:::
+
+::: {.fragment fragment-index=4}
+![](img/pupil_keypoints.png)
+:::
+
+::: {.fragment fragment-index=4}
+![](img/pupil_velocity_black.png)
+:::
 
 :::
 
+::: footer
+[Sample data](https://movement.neuroinformatics.dev/user_guide/input_output.html#sample-data): __Elevated Plus Maze__ from *Loukia Katsouri* | __Pupil Tracking__ from *Sepi Keshavarzi*.
+:::
+
+## `movement` in numbers {.smaller}
+
+{{< fa download >}} ~60k downloads (PyPI + conda-forge)
+
+{{< fa brands github >}} 26 code contributors, 50% from outside UCL
+
+{{< fa message >}} Public forum hosts 82 members across 53 discussion threads
+
+
+::: aside
+{{< fa brands github >}} https://github.com/neuroinformatics-unit/movement
+
+{{< fa message >}} https://neuroinformatics.zulipchat.com/#narrow/stream/406001-Movement
+:::
+
+## Tracking fiddler crabs in the field
+
+![](img/crabs_beach.png){height=550}
+
+::: footer
+*Sofía Miñano*, working with the Margrie & Branco labs.
+:::
 
 ## References
 
