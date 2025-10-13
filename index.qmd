@@ -14,14 +14,13 @@ format:
 
 ![Niko Sirmpilatze](img/niko_sirmpilatze.png)
 
+![Sofía Miñano](img/sofia_minano.png)
+
 ![Chang Huan Lo](img/chang_huan_lo.png)
 
-![Sofía Miñano](img/sofia_minano.png)
 :::
 
-# Behavioural experiments at SWC {background-color="#03A062"}
-
-## A variety of projects
+## Behavioural experiments at SWC
 
 ```{python}
 #| code-fold: true
@@ -66,60 +65,30 @@ fig.tight_layout()
 plt.show()
 ```
 
+## Tracking fiddler crabs in the field
 
-## A variety of needs
+![](img/crabs_beach.png){height=550}
 
-- Species: :mouse: :rat: :crab: :bee:
-- Some head-fixed but mostly free-moving
-- Experimental control: [bonsai](https://bonsai-rx.org/), [Bpod](https://sanworks.github.io/Bpod_Wiki/), custom...
-- Tracking: a mix of [DeepLabCut](https://www.mackenziemathislab.org/deeplabcut) & [SLEAP](https://sleap.ai/)
+::: footer
+*Sofía Miñano*, working with the Margrie & Branco labs.
+:::
 
-:::: {.fragment}
+## Our approach
 
 ::: {.callout-note}
-## A single standardised workflow won't do.
+## A single standardised workflow won't do
 
 We need general-purpose, versatile, interoperable tools that can be
 reliably mixed and matched to different needs.
 :::
 
-::::
-
-
-## Our approach
-
+::: {.fragment}
 - What are common workflows and tasks?
- 
-::: {.fragment}
-- Which needs are already well-served?
+- Which needs are well-served?
   - **Support and teach existing tools.**
-:::
-
-::: {.fragment}
-- Which needs are not adequately served?
+- Which needs are not covered?
   - **Develop new tools.**
 :::
-
-
-## The rise of markerless methods
-
-:::: {.columns}
-
-::: {.column width="45%"}
-![mackenziemathislab.org/deeplabcut](img/MousereachGIF.gif)
-:::
-
-::: {.column width="55%"}
-![sleap.ai](img/sleap_movie.gif)
-:::
-
-::::
-
-
-## The rise of markerless methods
-
-![](img/fields_converge_on_tracking.png)
-
 
 ## Common workflows
 
@@ -129,25 +98,91 @@ reliably mixed and matched to different needs.
 Modern computational neuroethology workflow
 :::
 
-## `movement` overview
 
-![](img/movement_overview.png)
+## Markerless pose estimation
+
+
+:::: {.columns}
+
+::: {.column width="60%"}
+![](img/pose_tracking.png)
+:::
+
+::: {.column width="40%"}
+![deeplabcut.org](img/MousereachGIF.gif)
+:::
+
+::::
+
+:::: {.fragment}
+
+::: {.callout-note}
+## Supporting & teaching pose estimation at SWC
+
+- We have deployed [DeepLabCut](https://www.mackenziemathislab.org/deeplabcut) & [SLEAP](https://sleap.ai/) as [HPC modules](https://howto.neuroinformatics.dev/data_analysis/HPC-module-SLEAP.html).
+- We provide regular [hands-on training on using SLEAP](https://animals-in-motion.neuroinformatics.dev/latest/03-sleap-tutorial.html).
+:::
+
+::::
+
+## What about other CV tasks? {.smaller}
+
+Computer vision (CV) tasks other than pose estimation are less accessible.
+
+![](img/ethology_overview.png)
+
+- Mix-and-match computer vision tools for animal behaviour analysis.
+- Still under early development (talk to *Sofía*!)
+
+::: footer
+[ethology.neuroinformatics.dev](https://ethology.neuroinformatics.dev/)
+:::
+
+
+## What happens after tracking?
+
+
+![](img/gap_after_tracking.png)
+
+
+## `movement` overview {.smaller}
+
+![](img/movement_overview.png){height=450}
+
+
+::: aside
+{{< fa download >}} ~60k downloads (PyPI + conda-forge)
+
+{{< fa brands github >}} 26 code contributors, 50% from outside UCL
+
+{{< fa message >}} Public forum hosts 82 members across 53 threads
+:::
 
 ::: footer
 [movement.neuroinformatics.dev](https://movement.neuroinformatics.dev/)
 :::
 
-## `movement` GUI
 
-{{< video "img/gui_tracks_demo.mp4" aspect-ratio="16x9" >}}
+## A unified interface for motion tracks {.smaller}
 
-::: footer
-[Sample data](https://movement.neuroinformatics.dev/user_guide/input_output.html#sample-data): from *Ann Duan's Lab* |.
+```{.python}
+from movement.io import load_poses
+
+ds = load_poses.from_file("/path/to/poses.h5", source_software="DeepLabCut", fps=50)
+```
+
+![](img/movement_poses_dataset_card.png){height=350}
+
+
+::: aside
+See also:
+
+- [movement.neuroinformatics.dev](https://movement.neuroinformatics.dev/) > User Guide > Input/Output
+- [movement.neuroinformatics.dev](https://movement.neuroinformatics.dev/) > User Guide > The movement datasets
 :::
 
-## `movement` example applications {.smaller}
 
-See [movement.neuroinformatics.dev/examples](https://movement.neuroinformatics.dev/examples/) for more.
+## `movement` example applications {.smaller}
 
 ::: {layout="[[25, 25, 20, 20], [40, 20, 40]]"}
 
@@ -181,34 +216,117 @@ See [movement.neuroinformatics.dev/examples](https://movement.neuroinformatics.d
 
 :::
 
+::: aside
+See also [movement.neuroinformatics.dev](https://movement.neuroinformatics.dev/) > Examples
+:::
+
+
 ::: footer
 [Sample data](https://movement.neuroinformatics.dev/user_guide/input_output.html#sample-data): __Elevated Plus Maze__ from *Loukia Katsouri* | __Pupil Tracking__ from *Sepi Keshavarzi*.
 :::
 
-## `movement` in numbers {.smaller}
+## `movement` GUI
 
-{{< fa download >}} ~60k downloads (PyPI + conda-forge)
-
-{{< fa brands github >}} 26 code contributors, 50% from outside UCL
-
-{{< fa message >}} Public forum hosts 82 members across 53 discussion threads
-
-
-::: aside
-{{< fa brands github >}} https://github.com/neuroinformatics-unit/movement
-
-{{< fa message >}} https://neuroinformatics.zulipchat.com/#narrow/stream/406001-Movement
-:::
-
-## Tracking fiddler crabs in the field
-
-![](img/crabs_beach.png){height=550}
+{{< video "img/gui_tracks_demo.mp4" aspect-ratio="16x9" >}}
 
 ::: footer
-*Sofía Miñano*, working with the Margrie & Branco labs.
+[Sample data](https://movement.neuroinformatics.dev/user_guide/input_output.html#sample-data) from *Ann Duan's Lab*.
 :::
 
-## References
+## `movement` outlook {.smaller}
 
-::: {#refs}
+:::: {columns}
+
+::: {.column width="70%"}
+
+::: {.fragment fragment-index=1}
+More advanced methods for outlier detection & smoothing
+
+- :hourglass_flowing_sand: [EKS](https://github.com/paninski-lab/eks) > `movement` data loader (in progress, [PR #670](https://github.com/neuroinformatics-unit/movement/pull/670))
+- :thinking: Incorporate approaches from [LightningPose](https://lightning-pose.readthedocs.io/en/latest/) & [EKS](https://github.com/paninski-lab/eks)
 :::
+
+::: {.fragment fragment-index=2}
+Modules for specialised applications
+
+- :thinking: gait analysis, pupillometry, collective behaviour
+:::
+
+::: {.fragment fragment-index=3}
+Integration with tools for neurophysiological data analysis
+
+- :thinking: Leverage [NWB](https://nwb.org/) + [pynapple](https://pynapple.org/)
+:::
+
+:::
+
+::: {.column width="30%" .fragment fragment-index=3}
+
+![](img/neural_behaviour_correlation.png)
+
+:::
+
+::::
+
+## What about behaviour segmentation? {.smaller}
+
+:::: {columns}
+
+::: {.column width="50%"}
+![](img/behaviour_segmentation.png)
+:::
+
+::: {.column width="50%"}
+We have explored some existing tools:
+
+- [keypoint-moseq](https://keypoint-moseq.readthedocs.io/en/latest/) (unsupervised)
+- [JABS-behavior-classifier](https://github.com/KumarLabJax/JABS-behavior-classifier) (supervised)
+
+Would love to hear your experiences with others!
+:::
+
+::::
+
+::: {.callout-note}
+## No single go-to solution yet
+
+:thinking: Is there scope for collaborating on improving existing tools or
+developing a new robust, easy-to-use interface for behaviour segmentation?
+:::
+
+## Some remaining challenges {.smaller}
+
+::: {.fragment fragment-index=1}
+**1. We are generating and storing vast amounts of video data.**
+
+Determine & share best practices for video compression.
+:::
+
+::: {.fragment fragment-index=1}
+![](img/video_processing.png){height=200}
+:::
+
+::: {.fragment fragment-index=2}
+**2. Requirements for manual data annotation are honerous.**
+
+- Can we leverage self-supervised pre-training like [beast](https://github.com/paninski-lab/beast)?
+- *Sofía* would be interested in making `beast` more plug-and-play for various CV tasks.
+:::
+
+
+## Links {.smaller}
+
+#### {{< fa brands python >}} `movement` 
+
+- {{< fa globe >}} https://movement.neuroinformatics.dev/
+- {{< fa brands github >}} https://github.com/neuroinformatics-unit/movement
+
+#### {{< fa brands python >}}  `ethology`
+
+- {{< fa globe >}} https://ethology.neuroinformatics.dev/
+- {{< fa brands github >}} https://github.com/neuroinformatics-unit/ethology
+
+#### {{< fa book-open >}} `animals-in-motion`
+
+- {{< fa globe >}} https://animals-in-motion.neuroinformatics.dev/
+- {{< fa brands github >}} https://github.com/neuroinformatics-unit/course-animals-in-motion
