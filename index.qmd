@@ -1,7 +1,7 @@
 ---
 title: Behavioural Projects Overview
 subtitle: SWC/GCNU Neuroinformatics Unit
-author: Niko Sirmpilatze, Sofia Miñano, Chang Huan Lo
+author: Niko Sirmpilatze, Sofía Miñano, Chang Huan Lo
 format:
   revealjs:
     footer: "IBL-AIND-NIU retreat | 2025-10-15"
@@ -52,7 +52,7 @@ frame_dict = {
 # | code-fold: true
 
 # Make a figure with 2 rows and 3 columns
-fig, ax = plt.subplots(2, 3, figsize=(12, 7.5))
+fig, ax = plt.subplots(2, 3, figsize=(12, 7))
 
 for i, (lab, frame) in enumerate(frame_dict.items()):
     r = i // 3
@@ -117,7 +117,7 @@ Modern computational neuroethology workflow
 :::: {.fragment}
 
 ::: {.callout-note}
-## Supporting & teaching pose estimation at SWC
+## Supporting & teaching pose estimation tools at SWC
 
 - We have deployed [DeepLabCut](https://www.mackenziemathislab.org/deeplabcut) & [SLEAP](https://sleap.ai/) as [HPC modules](https://howto.neuroinformatics.dev/data_analysis/HPC-module-SLEAP.html).
 - We provide regular [hands-on training on using SLEAP](https://animals-in-motion.neuroinformatics.dev/latest/03-sleap-tutorial.html).
