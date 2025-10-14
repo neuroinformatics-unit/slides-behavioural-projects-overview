@@ -163,25 +163,6 @@ Computer vision (CV) tasks other than pose estimation are less accessible.
 :::
 
 
-## A unified interface for motion tracks {.smaller}
-
-```{.python}
-from movement.io import load_poses
-
-ds = load_poses.from_file("/path/to/poses.h5", source_software="DeepLabCut", fps=50)
-```
-
-![](img/movement_poses_dataset_card.png){height=350}
-
-
-::: aside
-See also:
-
-- [movement.neuroinformatics.dev](https://movement.neuroinformatics.dev/) > User Guide > Input/Output
-- [movement.neuroinformatics.dev](https://movement.neuroinformatics.dev/) > User Guide > The movement datasets
-:::
-
-
 ## `movement` example applications {.smaller}
 
 ::: {layout="[[25, 25, 20, 20], [40, 20, 40]]"}
